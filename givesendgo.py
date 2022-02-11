@@ -277,7 +277,13 @@ class HonkHonk:
 if __name__ == '__main__':
     # example usage
     freedom = HonkHonk(
-        csv_file_name="truck_donors.csv",
+        csv_file_name="freedom_convoy_2022.csv",
         campaign_id=49000,
         webdriver_path_if_needed="E:\\BEN DOCS\\Downloads\\chromedriver_win32\\chromedriver.exe")
-    freedom.read(read_until_existing_id=False, start_from_min_id=False)
+    freedom.read(read_until_existing_id=True, start_from_min_id=False)
+
+    unvaxed = HonkHonk(
+        csv_file_name="adopt_a_trucker.csv",
+        campaign_id=48356,
+        webdriver_path_if_needed="E:\\BEN DOCS\\Downloads\\chromedriver_win32\\chromedriver.exe")
+    unvaxed.read(read_until_existing_id=True, start_from_min_id=False)
