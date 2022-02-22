@@ -242,7 +242,7 @@ class HonkHonk:
             # little crash protection
             tester +=1
             if tester >100:
-                self.df.to_csv(self.file_name)
+                self.df.to_csv(self.file_name,index=False)
                 tester=0
             # got my ip temp banned so now i'm making the loop take some naps.
             time.sleep(random.Random().randint(a=1, b=3))
@@ -270,20 +270,20 @@ class HonkHonk:
         if len(self.df.index) > 0:
             # overwrite ye olde csv file
 
-            self.df.to_csv(self.file_name)
+            self.df.to_csv(self.file_name, index=False)
 
 
 
 if __name__ == '__main__':
     # example usage
     freedom = HonkHonk(
-        csv_file_name="freedom_convoy_2022.csv",
+        csv_file_name="freedom_convoy_2022_scrape.csv",
         campaign_id=49000,
         webdriver_path_if_needed="E:\\BEN DOCS\\Downloads\\chromedriver_win32\\chromedriver.exe")
     freedom.read(read_until_existing_id=True, start_from_min_id=False)
 
     unvaxed = HonkHonk(
-        csv_file_name="adopt_a_trucker.csv",
+        csv_file_name="adopt_a_trucker_scrape.csv",
         campaign_id=48356,
         webdriver_path_if_needed="E:\\BEN DOCS\\Downloads\\chromedriver_win32\\chromedriver.exe")
     unvaxed.read(read_until_existing_id=True, start_from_min_id=False)
